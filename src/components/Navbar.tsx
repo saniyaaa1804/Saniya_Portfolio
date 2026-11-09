@@ -78,15 +78,11 @@ export const Navbar: React.FC<NavbarProps> = ({ darkMode, setDarkMode, onOpenRes
               {PERSONAL_INFO.monogram}
             </div>
             <div>
-              <div className="font-bold text-slate-900 dark:text-white tracking-tight flex items-center gap-2 text-base">
-                <span>{PERSONAL_INFO.preferredName}</span>
-                <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-medium bg-emerald-100 text-emerald-800 dark:bg-emerald-950/80 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-800">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse mr-1"></span>
-                  Tata Motors Intern
-                </span>
+              <div className="font-bold text-slate-900 dark:text-white tracking-tight text-base leading-tight">
+                {PERSONAL_INFO.preferredName}
               </div>
-              <p className="text-xs text-slate-500 dark:text-slate-400 font-mono hidden sm:block">
-                AI &amp; Analytics • B.Tech 2027
+              <p className="text-[11px] text-slate-500 dark:text-slate-400 font-mono hidden sm:block leading-tight">
+                AI &amp; Analytics · B.Tech 2027
               </p>
             </div>
           </a>

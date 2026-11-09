@@ -44,18 +44,27 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
         {/* Top Control Bar (Hidden during print) */}
         <div className="no-print sticky top-0 bg-slate-900 text-white px-6 py-4 flex items-center justify-between z-20 rounded-t-2xl">
           <div className="flex items-center gap-2">
-            <span className="font-bold text-sm tracking-tight">Saniya Tamboli — Professional Technical Resume</span>
+            <span className="font-bold text-sm tracking-tight">Saniya Tamboli — Professional Resume</span>
             <span className="text-xs text-slate-400 hidden sm:inline">• B.Tech CSE (AI &amp; Analytics)</span>
           </div>
 
           <div className="flex items-center gap-2">
+            <a
+              href="/resume.pdf"
+              download="Saniya_Tamboli_Resume.pdf"
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white font-medium text-xs transition-colors shadow-sm"
+              title="Download Resume as PDF"
+            >
+              <Download className="w-3.5 h-3.5" />
+              <span>Download PDF</span>
+            </a>
             <button
               onClick={handlePrint}
               className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-indigo-600 hover:bg-indigo-700 text-white font-medium text-xs transition-colors shadow-sm"
-              title="Print or Save as PDF"
+              title="Print or Save as PDF via browser"
             >
               <Printer className="w-3.5 h-3.5" />
-              <span>Print / Save PDF</span>
+              <span>Print / PDF</span>
             </button>
             <button
               onClick={onClose}
@@ -243,6 +252,30 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
             </ul>
           </div>
 
+        </div>
+
+        {/* Bottom Download Bar (Hidden during print) */}
+        <div className="no-print sticky bottom-0 bg-white border-t border-slate-200 px-6 py-4 flex flex-col sm:flex-row items-center justify-between gap-3 rounded-b-2xl shadow-[0_-4px_16px_rgba(0,0,0,0.06)]">
+          <p className="text-xs text-slate-500">
+            📄 To save as PDF: click <span className="font-semibold text-slate-700">Download PDF</span> or use <span className="font-semibold text-slate-700">Print → Save as PDF</span> in your browser.
+          </p>
+          <div className="flex items-center gap-2 shrink-0">
+            <a
+              href="/resume.pdf"
+              download="Saniya_Tamboli_Resume.pdf"
+              className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-xs transition-colors shadow-sm"
+            >
+              <Download className="w-3.5 h-3.5" />
+              Download PDF
+            </a>
+            <button
+              onClick={handlePrint}
+              className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-indigo-600 hover:bg-indigo-700 text-white font-semibold text-xs transition-colors shadow-sm"
+            >
+              <Printer className="w-3.5 h-3.5" />
+              Print / Save
+            </button>
+          </div>
         </div>
 
       </div>
